@@ -196,6 +196,7 @@ export interface TypeDocOptionMap {
     showConfig: boolean;
     logLevel: typeof LogLevel;
     skipErrorChecking: boolean;
+    lang: string;
 }
 
 /**

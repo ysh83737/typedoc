@@ -24,6 +24,8 @@
     "node": ">= 16"
   },
   "dependencies": {
+    "@typedoc/locales": "file:./locales",
+    "i18next": "^23.7.16",
     "lunr": "^2.3.9",
     "marked": "^4.3.0",
     "minimatch": "^9.0.3",

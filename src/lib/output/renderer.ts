@@ -8,6 +8,7 @@
  */
 import * as fs from "fs";
 import * as path from "path";
+import type { TFunction } from "i18next";
 
 import type { Application } from "../application";
 import type { Theme } from "./theme";
@@ -26,6 +27,7 @@ import type { JsxElement } from "../utils/jsx.elements";
 import type { DefaultThemeRenderContext } from "./themes/default/DefaultThemeRenderContext";
 import { validateStateIsClean } from "./themes/default/partials/type";
 import { setRenderSettings } from "../utils/jsx";
+import { loadI18n } from "./i18n";
 
 /**
  * Describes the hooks available to inject output in the default theme.
@@ -205,6 +207,13 @@ export class Renderer extends ChildableComponent<
     @Option("pretty")
     accessor pretty!: boolean;
 
+    /** @internal */
+    @Option("lang")
+    accessor lang: string = 'en';
+
+    /** i18n t function */
+    i18nT!: TFunction;
+
     renderStartTime = -1;
 
     /**
@@ -243,6 +252,8 @@ export class Renderer extends ChildableComponent<
             return;
         }
 
+        this.i18nT = loadI18n(this);
+
         const output = new RendererEvent(
             RendererEvent.BEGIN,
             outputDirectory,
@@ -258,7 +269,7 @@ export class Renderer extends ChildableComponent<
                 `There are ${output.urls.length} pages to write.`,
             );
             output.urls.forEach((mapping) => {
-                this.renderDocument(...output.createPageEvent(mapping));
+                this.renderDocument(...output.createPageEvent(mapping, this.i18nT));
                 validateStateIsClean(mapping.url);
             });
 

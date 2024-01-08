@@ -1,4 +1,5 @@
 import * as Path from "path";
+import type { TFunction } from "i18next";
 
 import { Event } from "../utils/events";
 import type { ProjectReflection } from "../models/reflections/project";
@@ -65,11 +66,13 @@ export class RendererEvent extends Event {
      */
     public createPageEvent<Model>(
         mapping: UrlMapping<Model>,
+        i18nT: TFunction,
     ): [RenderTemplate<PageEvent<Model>>, PageEvent<Model>] {
         const event = new PageEvent<Model>(PageEvent.BEGIN, mapping.model);
         event.project = this.project;
         event.url = mapping.url;
         event.filename = Path.join(this.outputDirectory, mapping.url);
+        event.t = i18nT;
         return [mapping.template, event];
     }
 }
@@ -82,6 +85,7 @@ export class RendererEvent extends Event {
  * @see {@link Renderer.EVENT_END_PAGE}
  */
 export class PageEvent<out Model = unknown> extends Event {
+    t!: TFunction;
     /**
      * The project the renderer is currently processing.
      */

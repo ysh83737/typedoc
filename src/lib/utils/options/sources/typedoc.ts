@@ -826,6 +826,12 @@ export function addTypeDocOptions(options: Pick<Options, "addDeclaration">) {
             notDocumented: false,
         },
     });
+    options.addDeclaration({
+        name: "lang",
+        help: "Specify language.",
+        type: ParameterType.String,
+        defaultValue: "en",
+    });
 }
 
 function isObject(x: unknown): x is Record<string, unknown> {
