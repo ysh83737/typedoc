@@ -18,5 +18,7 @@
     },
     "sidebarLinks": {
         "API": "https://typedoc.org/api"
-    }
+    },
+    "lang": "en",
+    "locales": "./locales"
 }
