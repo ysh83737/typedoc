@@ -832,6 +832,13 @@ export function addTypeDocOptions(options: Pick<Options, "addDeclaration">) {
         type: ParameterType.String,
         defaultValue: "en",
     });
+    options.addDeclaration({
+        name: "locales",
+        help: "Specify the location for read user i18n resource.",
+        type: ParameterType.Path,
+        hint: ParameterHint.Directory,
+        defaultValue: "./locales",
+    });
 }
 
 function isObject(x: unknown): x is Record<string, unknown> {

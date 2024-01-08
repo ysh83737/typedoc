@@ -9,7 +9,7 @@ import type { Renderer } from '.';
  * @returns t function
  */
 export function loadI18n(context: Renderer) {
-    const { lang } = context
+    const { lang, locales } = context
 
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     i18next.init({
@@ -24,7 +24,7 @@ export function loadI18n(context: Renderer) {
     addI18nResource(getPresetJsonPath);
 
     // Load user i18n resource
-    const getUserJsonPath = () => path.resolve(process.cwd(), `i18n/${lang}.json`);
+    const getUserJsonPath = () => path.resolve(process.cwd(), locales, `${lang}.json`);
     addI18nResource(getUserJsonPath);
 
     return i18next.t;
@@ -35,6 +35,7 @@ export function loadI18n(context: Renderer) {
      */
     function addI18nResource(getJsonPath: () => string) {
         const resource = loadResource(getJsonPath);
+        // merge and overrid previous resource
         i18next.addResourceBundle(lang, 'translation', resource, true, true);
     }
 

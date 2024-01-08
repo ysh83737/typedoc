@@ -209,7 +209,11 @@ export class Renderer extends ChildableComponent<
 
     /** @internal */
     @Option("lang")
-    accessor lang: string = 'en';
+    accessor lang!: string;
+
+    /** @internal */
+    @Option("locales")
+    accessor locales!: string;
 
     /** i18n t function */
     i18nT!: TFunction;
