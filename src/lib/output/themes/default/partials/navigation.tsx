@@ -40,7 +40,7 @@ export function sidebarLinks(context: DefaultThemeRenderContext) {
     );
 }
 
-export function settings(context: DefaultThemeRenderContext) {
+export function settings(context: DefaultThemeRenderContext, props: PageEvent<Reflection>) {
     const defaultFilters = context.options.getValue("visibilityFilters") as Record<string, boolean>;
 
     const visibilityOptions: JSX.Element[] = [];
@@ -73,7 +73,7 @@ export function settings(context: DefaultThemeRenderContext) {
                 <summary class="tsd-accordion-summary">
                     <h3>
                         {context.icons.chevronDown()}
-                        Settings
+                        { props.t('settings') }
                     </h3>
                 </summary>
                 <div class="tsd-accordion-details">
@@ -168,7 +168,7 @@ export const navigation = function navigation(context: DefaultThemeRenderContext
 export function pageSidebar(context: DefaultThemeRenderContext, props: PageEvent<Reflection>) {
     return (
         <>
-            {context.settings()}
+            {context.settings(props)}
             {context.pageNavigation(props)}
         </>
     );
@@ -219,7 +219,7 @@ export function pageNavigation(context: DefaultThemeRenderContext, props: PageEv
             <summary class="tsd-accordion-summary">
                 <h3>
                     {context.icons.chevronDown()}
-                    On This Page
+                    { props.t('contents') }
                 </h3>
             </summary>
             <div class="tsd-accordion-details">
