@@ -23,6 +23,16 @@ export function loadI18n(context: Renderer) {
     const getPresetJsonPath = () => require.resolve(`@typedoc/locales/${lang}`);
     addI18nResource(getPresetJsonPath);
 
+    // Load plugins i18n resource
+    const plugins = context.application.options.getValue('plugin')
+    plugins.forEach((item) => {
+        // e.g. typedoc-plugin-xxx/dist/entry.js
+        const pluginEntry = require.resolve(item);
+        // e.g. typedoc-plugin-xxx/dist/locales/en.json
+        const getPluginJsonPath = () => path.resolve(pluginEntry, '..', `locales/${lang}.json`);
+        addI18nResource(getPluginJsonPath);
+    })
+
     // Load user i18n resource
     const getUserJsonPath = () => path.resolve(process.cwd(), locales, `${lang}.json`);
     addI18nResource(getUserJsonPath);
