@@ -24,7 +24,7 @@
     "node": ">= 16"
   },
   "dependencies": {
-    "@typedoc/locales": "https://github.com/ysh83737/typedoc/releases/download/%40typedoc%2Flocales%400.0.1/typedoc-locales-0.0.1.tgz",
+    "@typedoc/locales": "https://github.com/ysh83737/typedoc/releases/download/%40typedoc%2Flocales%400.0.2/typedoc-locales-0.0.2.tgz",
     "i18next": "^23.7.16",
     "lunr": "^2.3.9",
     "marked": "^4.3.0",
