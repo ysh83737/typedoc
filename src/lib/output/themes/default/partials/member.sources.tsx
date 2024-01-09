@@ -6,7 +6,7 @@ function sourceLink(context: DefaultThemeRenderContext, item: SourceReference) {
     if (!item.url) {
         return (
             <li>
-                Defined in {item.fileName}:{item.line}
+                { context.page.t('member.defined') } {item.fileName}:{item.line}
             </li>
         );
     }
@@ -14,7 +14,7 @@ function sourceLink(context: DefaultThemeRenderContext, item: SourceReference) {
     if (context.options.getValue("sourceLinkExternal")) {
         return (
             <li>
-                {"Defined in "}
+                { context.page.t('member.defined') }
                 <a href={item.url} class="external" target="_blank">
                     {item.fileName}:{item.line}
                 </a>
@@ -24,7 +24,7 @@ function sourceLink(context: DefaultThemeRenderContext, item: SourceReference) {
 
     return (
         <li>
-            {"Defined in "}
+            { context.page.t('member.defined') }
             <a href={item.url}>
                 {item.fileName}:{item.line}
             </a>
@@ -41,7 +41,7 @@ export const memberSources = (
     if (props.implementationOf) {
         sources.push(
             <p>
-                {"Implementation of "}
+                { context.page.t('member.implementation') }
                 {context.typeAndParent(props.implementationOf)}
             </p>,
         );
@@ -49,7 +49,7 @@ export const memberSources = (
     if (props.inheritedFrom) {
         sources.push(
             <p>
-                {"Inherited from "}
+                { context.page.t('member.inherited') }
                 {context.typeAndParent(props.inheritedFrom)}
             </p>,
         );
@@ -57,7 +57,7 @@ export const memberSources = (
     if (props.overwrites) {
         sources.push(
             <p>
-                {"Overrides "}
+                { context.page.t('member.overrides') }
                 {context.typeAndParent(props.overwrites)}
             </p>,
         );

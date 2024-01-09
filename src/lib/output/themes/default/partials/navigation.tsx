@@ -73,24 +73,24 @@ export function settings(context: DefaultThemeRenderContext, props: PageEvent<Re
                 <summary class="tsd-accordion-summary">
                     <h3>
                         {context.icons.chevronDown()}
-                        { props.t('settings') }
+                        { props.t('settings.settings') }
                     </h3>
                 </summary>
                 <div class="tsd-accordion-details">
                     {visibilityOptions.length && (
                         <div class="tsd-filter-visibility">
-                            <h4 class="uppercase">Member Visibility</h4>
+                            <h4 class="uppercase">{ props.t('settings.visibility') }</h4>
                             <form>
                                 <ul id="tsd-filter-options">{...visibilityOptions}</ul>
                             </form>
                         </div>
                     )}
                     <div class="tsd-theme-toggle">
-                        <h4 class="uppercase">Theme</h4>
+                        <h4 class="uppercase">{ props.t('settings.theme') }</h4>
                         <select id="tsd-theme">
-                            <option value="os">OS</option>
-                            <option value="light">Light</option>
-                            <option value="dark">Dark</option>
+                            <option value="os">{ props.t('settings.os') }</option>
+                            <option value="light">{ props.t('settings.light') }</option>
+                            <option value="dark">{ props.t('settings.dark') }</option>
                         </select>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ export function pageNavigation(context: DefaultThemeRenderContext, props: PageEv
             <summary class="tsd-accordion-summary">
                 <h3>
                     {context.icons.chevronDown()}
-                    { props.t('contents') }
+                    { props.t('sidebar.contents') }
                 </h3>
             </summary>
             <div class="tsd-accordion-details">

@@ -2,24 +2,24 @@ import type { DefaultThemeRenderContext } from "../DefaultThemeRenderContext";
 import { JSX } from "../../../../utils";
 import type { ReferenceReflection } from "../../../../models";
 
-export const memberReference = ({ urlTo }: DefaultThemeRenderContext, props: ReferenceReflection) => {
+export const memberReference = ({ urlTo, page }: DefaultThemeRenderContext, props: ReferenceReflection) => {
     const referenced = props.tryGetTargetReflectionDeep();
 
     if (!referenced) {
-        return <>Re-exports {props.name}</>;
+        return <>{ page.t('member.re-export') } {props.name}</>;
     }
 
     if (props.name === referenced.name) {
         return (
             <>
-                Re-exports <a href={urlTo(referenced)}>{referenced.name}</a>
+                { page.t('member.re-export') } <a href={urlTo(referenced)}>{referenced.name}</a>
             </>
         );
     }
 
     return (
         <>
-            Renames and re-exports <a href={urlTo(referenced)}>{referenced.name}</a>
+            { page.t('member.rename') } <a href={urlTo(referenced)}>{referenced.name}</a>
         </>
     );
 };

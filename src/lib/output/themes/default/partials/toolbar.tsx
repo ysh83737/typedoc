@@ -24,8 +24,8 @@ export const toolbar = (context: DefaultThemeRenderContext, props: PageEvent<Ref
                 </div>
 
                 <ul class="results">
-                    <li class="state loading">Preparing search index...</li>
-                    <li class="state failure">The search index is not available</li>
+                    <li class="state loading">{ props.t('toolbar.preparing') }</li>
+                    <li class="state failure">{ props.t('toolbar.unavailable') }</li>
                 </ul>
 
                 <a href={context.options.getValue("titleLink") || context.relativeURL("index.html")} class="title">

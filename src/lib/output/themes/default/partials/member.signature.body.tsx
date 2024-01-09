@@ -19,7 +19,7 @@ export function memberSignatureBody(
 
             {props.parameters && props.parameters.length > 0 && (
                 <div class="tsd-parameters">
-                    <h4 class="tsd-parameters-title">Parameters</h4>
+                    <h4 class="tsd-parameters-title">{ context.page.t('member.parameters') }</h4>
                     <ul class="tsd-parameter-list">
                         {props.parameters.map((item) => (
                             <li>
@@ -47,7 +47,7 @@ export function memberSignatureBody(
             {props.type && (
                 <>
                     <h4 class="tsd-returns-title">
-                        {"Returns "}
+                        { context.page.t('member.returns') }
                         {context.type(props.type)}
                     </h4>
                     {returnsTag && <Raw html={context.markdown(returnsTag.content)} />}

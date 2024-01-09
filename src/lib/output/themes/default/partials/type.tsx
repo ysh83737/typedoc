@@ -174,13 +174,13 @@ const typeRenderers: {
 
         switch (type.readonlyModifier) {
             case "+":
-                parts.push(<span class="tsd-signature-keyword">readonly </span>);
+                parts.push(<span class="tsd-signature-keyword">{ context.page.t('type.readonly') }</span>);
                 break;
             case "-":
                 parts.push(
                     <>
                         <span class="tsd-signature-symbol">-</span>
-                        <span class="tsd-signature-keyword">readonly </span>
+                        <span class="tsd-signature-keyword">{ context.page.t('type.readonly') }</span>
                     </>,
                 );
                 break;

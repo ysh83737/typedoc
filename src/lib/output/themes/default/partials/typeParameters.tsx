@@ -6,7 +6,7 @@ export function typeParameters(context: DefaultThemeRenderContext, typeParameter
     return (
         <>
             <section class="tsd-panel">
-                <h4>Type Parameters</h4>
+                <h4>{ context.page.t('type.parameters') }</h4>
                 <ul class="tsd-type-parameter-list">
                     {typeParameters?.map((item) => (
                         <li>

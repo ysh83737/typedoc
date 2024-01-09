@@ -7,10 +7,11 @@ export function footer(context: DefaultThemeRenderContext) {
         return (
             <div class="tsd-generator">
                 <p>
-                    {"Generated using "}
+                    { context.page.t('footer.generate') }
                     <a href="https://typedoc.org/" target="_blank">
                         TypeDoc
                     </a>
+                    { context.page.t('footer.generate2') }
                 </p>
             </div>
         );
