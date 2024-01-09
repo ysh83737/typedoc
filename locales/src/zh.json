@@ -1,4 +1,38 @@
 {
-    "settings": "设置",
-    "contents": "目录"
+    "footer": {
+        "generate": "使用",
+        "generate2": "创建"
+    },
+    "member": {
+        "type": "类型声明",
+        "re-export": "重新导出",
+        "rename": "重新命名导出",
+        "abstract": "抽象",
+        "new": "新",
+        "parameters": "参数",
+        "returns": "返回值 ",
+        "defined": "定义于 ",
+        "implementation": "实现",
+        "inherited": "继承于",
+        "overrides": "重写"
+    },
+    "sidebar": {
+        "contents": "目录"
+    },
+    "settings": {
+        "settings": "设置",
+        "visibility": "成员可见",
+        "theme": "主题",
+        "os": "跟随系统",
+        "light": "浅色",
+        "dark": "深色"
+    },
+    "toolbar": {
+        "preparing": "正在初始化搜索组件...",
+        "unavailable": "搜索组件不可用"
+    },
+    "type": {
+        "readonly": "只读",
+        "parameters": "泛型参数"
+    }
 }

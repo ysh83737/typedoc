@@ -1,4 +1,38 @@
 {
-    "settings": "Settings",
-    "contents": "On This Page"
+    "footer": {
+        "generate": "Generated using ",
+        "generate2": ""
+    },
+    "member": {
+        "type": "Type declaration",
+        "re-export": "Re-exports",
+        "rename": "Renames and re-exports",
+        "abstract": "abstract",
+        "new": "new",
+        "parameters": "Parameters",
+        "returns": "Returns ",
+        "defined": "Defined in ",
+        "implementation": "Implementation of ",
+        "inherited": "Inherited from ",
+        "overrides": "Overrides "
+    },
+    "sidebar": {
+        "contents": "On This Page"
+    },
+    "settings": {
+        "settings": "Settings",
+        "visibility": "Member Visibility",
+        "theme": "Theme",
+        "os": "OS",
+        "light": "Light",
+        "dark": "Dark"
+    },
+    "toolbar": {
+        "preparing": "Preparing search index...",
+        "unavailable": "The search index is not available"
+    },
+    "type": {
+        "readonly": "readonly",
+        "parameters": "Type Parameters"
+    }
 }
